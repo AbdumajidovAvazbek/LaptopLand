@@ -26,6 +26,10 @@ namespace LaptopLand.Data.DbContexts
                 .WithMany(p => p.OrderProducts)
                 .HasForeignKey(op => op.ProductId);
 
+            modelBuilder.Entity<Customer>()
+                .HasOne<Customer>()
+                .WithMany(o => o)
+
             modelBuilder.Entity<OrderProduct>()
                 .HasOne(op => op.Order)
                 .WithMany(o => o.OrderProducts)
