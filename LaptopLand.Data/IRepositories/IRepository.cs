@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LaptopLand.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,6 @@ namespace LaptopLand.Data.IRepositories
         public Task<bool> DeleteAsync(long id);
         public Task<TEntity> SelecttByIdAsync(long id);
         public IQueryable<TEntity> SelectAll();
+        object InsertAsync(Order mappedUser);
     }
 }

@@ -2,6 +2,7 @@
 using LaptopLand.Domain.Entities;
 using LaptopLand.Service.Dtos.Category;
 using LaptopLand.Service.Dtos.Customer;
+using LaptopLand.Service.Dtos.Order;
 using LaptopLand.Service.Dtos.Product;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,10 @@ namespace LaptopLand.Service.Mappings
                 cfg.CreateMap<Customer, CustomerForResultDto>().ReverseMap();
                 cfg.CreateMap<Customer, CustomerForUpdateDto>().ReverseMap();
                 cfg.CreateMap<Customer, CustomerForCreationDto>().ReverseMap();
+                cfg.CreateMap<Order, OrderForCreationDto>().ReverseMap();
+                cfg.CreateMap<Order, OrderForResultDto>().ReverseMap();
+                cfg.CreateMap<OrderProduct, OrderForCreationDto>().ReverseMap();
+                cfg.CreateMap<OrderProduct, OrderForResultDto>().ReverseMap();
             });
             return config.CreateMapper();
         }

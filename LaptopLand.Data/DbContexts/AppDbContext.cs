@@ -18,17 +18,15 @@ namespace LaptopLand.Data.DbContexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<OrderProduct>()
-                .HasKey(op => new { op.ProductId, op.OrderId });
-
+            modelBuilder.Entity<Order>()
+                .HasMany(op => op.OrderProducts)
+                .WithOne(o => o.Order)
+                .HasForeignKey(o => o.OrderId)
+                .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<OrderProduct>()
                 .HasOne(op => op.Product)
                 .WithMany(p => p.OrderProducts)
                 .HasForeignKey(op => op.ProductId);
-
-            modelBuilder.Entity<Customer>()
-                .HasOne<Customer>()
-                .WithMany(o => o)
 
             modelBuilder.Entity<OrderProduct>()
                 .HasOne(op => op.Order)

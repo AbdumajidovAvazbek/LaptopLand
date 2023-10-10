@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LaptopLand.Data.DbContexts;
 using Microsoft.EntityFrameworkCore;
+using LaptopLand.Domain.Entities;
 
 namespace LaptopLand.Data.Repositories
 {
@@ -32,9 +33,16 @@ namespace LaptopLand.Data.Repositories
 
         public async Task<TEntity> InsertAsync(TEntity entity)
         {
-            await dbSet.AddAsync(entity);
+            var model = (await dbSet.AddAsync(entity)).Entity;
+
             await dbContext.SaveChangesAsync();
-            return entity;
+
+            return model;
+        }
+
+        public object InsertAsync(Order mappedUser)
+        {
+            throw new NotImplementedException();
         }
 
         public IQueryable<TEntity> SelectAll() => this.dbSet;
