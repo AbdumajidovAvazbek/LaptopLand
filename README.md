@@ -2,7 +2,7 @@
 
 Welcome to LaptopLand, your one-stop destination for all things laptops! This project aims to provide a comprehensive e-commerce platform for buying, selling, and exploring the latest laptops in the market.
 
-![LaptopLand Logo](link-to-your-logo.png)
+![LaptopLand Logo](Image by <a href="https://www.freepik.com/free-photo/people-generating-images-using-artificial-intelligence-laptop_66108420.htm#query=laptop&position=18&from_view=keyword&track=sph">Freepik</a>)
 
 ## Table of Contents
 
